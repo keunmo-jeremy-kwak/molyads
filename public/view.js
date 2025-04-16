@@ -15,9 +15,10 @@ console.log("📦 userkey:", userkey);
       method: "POST",
       body: JSON.stringify({ media, userkey, event: "view" }),
       headers: { "Content-Type": "application/json" },
+    }).then(() => {
+      console.log("✅ 전송 완료!");
+    }).catch((err) => {
+      console.error("❌ 전송 실패", err);
     });
-    sessionStorage.setItem(key, "1");
-  }
-})();
 
 
