@@ -1,7 +1,4 @@
 console.log("🔥 view.js loaded", window.location.search);
-console.log("📦 media:", media);
-console.log("📦 userkey:", userkey);
-
 
 (function () {
   const params = new URLSearchParams(window.location.search);
@@ -18,3 +15,6 @@ console.log("📦 userkey:", userkey);
     sessionStorage.setItem(key, "1");
   }
 })();
+
+console.log("📦 media:", media);
+console.log("📦 userkey:", userkey);
