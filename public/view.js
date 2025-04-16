@@ -5,7 +5,7 @@
   const key = `ot_view_${userkey}`;
 
   if (!sessionStorage.getItem(key)) {
-    fetch("https://your-server.com/track/view", {
+    fetch("https://ot-tracker-api.onrender.com/track/view", {
       method: "POST",
       body: JSON.stringify({ media, userkey, event: "view" }),
       headers: { "Content-Type": "application/json" },
