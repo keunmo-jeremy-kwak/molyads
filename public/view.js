@@ -1,4 +1,6 @@
 console.log("🔥 view.js loaded", window.location.search);
+console.log("📦 media:", media);
+console.log("📦 userkey:", userkey);
 
 
 (function () {
