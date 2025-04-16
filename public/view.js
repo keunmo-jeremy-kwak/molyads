@@ -1,3 +1,6 @@
+console.log("🔥 view.js loaded", window.location.search);
+
+
 (function () {
   const params = new URLSearchParams(window.location.search);
   const media = params.get("media");
