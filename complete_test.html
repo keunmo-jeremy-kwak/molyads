@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>🎉 OT 전환 완료 페이지</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- 트래킹 스크립트 (자동 실행) -->
+  <script defer src="https://molyads.vercel.app/complete.js"></script>
+
+  <!-- 스타일 -->
+  <style>
+    :root {
+      --bg: #fefce8;
+      --card: #fff;
+      --primary: #10b981;
+      --text: #333;
+      --radius: 16px;
+      --shadow: 0 4px 10px rgba(0,0,0,0.08);
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: var(--bg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    .card {
+      background: var(--card);
+      padding: 40px 30px;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      text-align: center;
+      max-width: 400px;
+      width: 90%;
+    }
+
+    h1 {
+      color: var(--primary);
+      margin-bottom: 16px;
+    }
+
+    p {
+      color: var(--text);
+      font-size: 16px;
+      line-height: 1.5;
+    }
+
+    .small {
+      font-size: 13px;
+      margin-top: 20px;
+      color: #999;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>🎉 전환 완료!</h1>
+    <p>complete.js가 실행되어<br><strong>전환 트래킹이 전송</strong>되었습니다.</p>
+    <p>콘솔 로그를 확인해보세요.</p>
+    <div class="small">media & userkey는 URL 파라미터로 전달됩니다.</div>
+  </div>
+</body>
+</html>
