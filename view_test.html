@@ -4,8 +4,11 @@
   <meta charset="UTF-8">
   <title>📊 OT 트래킹 테스트</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- view 트래킹 -->
   <script defer src="https://molyads.vercel.app/view.js"></script>
 
+  <!-- 스타일 -->
   <style>
     :root {
       --bg: #2c2f33;
@@ -56,14 +59,41 @@
       font-size: 13px;
       color: #888;
     }
+
+    button {
+      margin-top: 24px;
+      background: var(--primary);
+      color: #fff;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    button:hover {
+      background: #5b6eae;
+    }
   </style>
 </head>
 <body>
   <div class="card">
     <h1>📊 트래킹 시작!</h1>
-    <p>이 페이지에 도달하면<br><strong>view.js가 자동 실행</strong>되어 트래킹 됩니다.</p>
-    <p>브라우저 콘솔을 확인해보세요.</p>
+    <p>view.js가 자동 실행되어<br><strong>광고 유입이 기록</strong>되었습니다.</p>
+    <p>이제 완료 페이지로 이동해보세요.</p>
+
+    <button id="go-complete">가입 완료하러 가기</button>
+
     <div class="small">💡 media & userkey는 URL 파라미터로 전달됩니다.</div>
   </div>
+
+  <!-- 버튼 클릭 시 파라미터 유지한 채 complete.html로 이동 -->
+  <script>
+    document.getElementById("go-complete").addEventListener("click", () => {
+      const params = new URLSearchParams(window.location.search);
+      window.location.href = "/complete.html?" + params.toString();
+    });
+  </script>
 </body>
 </html>
