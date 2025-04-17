@@ -2,28 +2,27 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
-  <title>🎉 OT 전환 완료 페이지</title>
+  <title>🎉 OT 전환 완료</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <!-- 트래킹 스크립트 (자동 실행) -->
   <script defer src="https://molyads.vercel.app/complete.js"></script>
 
-  <!-- 스타일 -->
   <style>
     :root {
-      --bg: #fefce8;
-      --card: #fff;
-      --primary: #10b981;
-      --text: #333;
-      --radius: 16px;
-      --shadow: 0 4px 10px rgba(0,0,0,0.08);
+      --bg: #2c2f33;
+      --card: #23272a;
+      --primary: #43b581;
+      --text: #ffffff;
+      --subtext: #b9bbbe;
+      --radius: 12px;
+      --shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
     }
 
     body {
       margin: 0;
       padding: 0;
-      font-family: 'Segoe UI', sans-serif;
       background: var(--bg);
+      font-family: 'Segoe UI', sans-serif;
+      color: var(--text);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -32,38 +31,39 @@
 
     .card {
       background: var(--card);
-      padding: 40px 30px;
+      padding: 40px 32px;
       border-radius: var(--radius);
       box-shadow: var(--shadow);
-      text-align: center;
-      max-width: 400px;
+      max-width: 420px;
       width: 90%;
+      text-align: center;
     }
 
     h1 {
       color: var(--primary);
-      margin-bottom: 16px;
+      font-size: 24px;
+      margin-bottom: 12px;
     }
 
     p {
-      color: var(--text);
       font-size: 16px;
-      line-height: 1.5;
+      color: var(--subtext);
+      line-height: 1.6;
     }
 
     .small {
-      font-size: 13px;
       margin-top: 20px;
-      color: #999;
+      font-size: 13px;
+      color: #888;
     }
   </style>
 </head>
 <body>
   <div class="card">
     <h1>🎉 전환 완료!</h1>
-    <p>complete.js가 실행되어<br><strong>전환 트래킹이 전송</strong>되었습니다.</p>
-    <p>콘솔 로그를 확인해보세요.</p>
-    <div class="small">media & userkey는 URL 파라미터로 전달됩니다.</div>
+    <p>complete.js가 실행되어<br><strong>전환 트래킹이 완료</strong>되었습니다.</p>
+    <p>콘솔 로그를 꼭 확인해보세요.</p>
+    <div class="small">💡 media & userkey는 URL 파라미터로 전달됩니다.</div>
   </div>
 </body>
 </html>
