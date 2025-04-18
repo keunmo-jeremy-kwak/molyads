@@ -33,6 +33,9 @@ if (!c_ad_media || !c_ad_user) {
     .then(() => console.log("✅ complete 전송 완료!"))
     .catch(err => console.error("❌ complete 전송 실패", err));
 
+    console.log("✅ 전체 파라미터 문자열:", params.toString());
+
+
     sessionStorage.setItem(c_key, "1");
   }
 }
