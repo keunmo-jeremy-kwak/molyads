@@ -4,7 +4,7 @@ const ad_adv = params.get("ad_adv");
 const ad_campaign = params.get("ad_campaign");
 const ad_media = params.get("ad_media");
 const ad_user = params.get("ad_user");
-ad_source = params.get("ad_source");
+const ad_source = params.get("ad_source");
 const ad_format = params.get("ad_format");
 
 console.log("📦 광고주:", ad_adv);
