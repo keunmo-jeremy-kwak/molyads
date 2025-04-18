@@ -1,31 +1,31 @@
-const cParams = new URLSearchParams(window.location.search);
+const params = new URLSearchParams(window.location.search);
 
-const c_ad_adv = cParams.get("ad_adv");
-const c_ad_campaign = cParams.get("ad_campaign");
-const c_ad_media = cParams.get("ad_media");
-const c_ad_user = cParams.get("ad_user");
-const c_ad_source = cParams.get("ad_source");
-const c_ad_format = cParams.get("ad_format");
+const ad_adv = params.get("ad_adv");
+const ad_campaign = params.get("ad_campaign");
+const ad_media = params.get("ad_media");
+const ad_user = params.get("ad_user");
+const ad_source = params.get("ad_source");
+const ad_format = params.get("ad_format");
 
-console.log("📦 광고주:", c_ad_adv);
-console.log("📦 캠페인:", c_ad_campaign);
-console.log("📡 매체:", c_ad_media);
-console.log("🧍 유저:", c_ad_user);
+console.log("📦 광고주:", ad_adv);
+console.log("📦 캠페인:", ad_campaign);
+console.log("📡 매체:", ad_media);
+console.log("🧍 유저:", ad_user);
 
-if (!c_ad_media || !c_ad_user) {
+if (!ad_media || !ad_user) {
   console.warn("❗ 필수 파라미터 누락 (ad_media/ad_user)");
 } else {
-  const c_key = `ot_complete_${c_ad_user}`;
-  if (!sessionStorage.getItem(c_key)) {
+  const key = `ot_complete_${ad_user}`;
+  if (!sessionStorage.getItem(key)) {
     fetch("https://ot-tracker-api.onrender.com/track/complete", {
       method: "POST",
       body: JSON.stringify({
-        ad_adv: c_ad_adv,
-        ad_campaign: c_ad_campaign,
-        ad_media: c_ad_media,
-        ad_user: c_ad_user,
-        ad_source: c_ad_source,
-        ad_format: c_ad_format,
+        ad_adv,
+        ad_campaign,
+        ad_media,
+        ad_user,
+        ad_source,
+        ad_format,
         event: "complete"
       }),
       headers: { "Content-Type": "application/json" },
@@ -33,9 +33,6 @@ if (!c_ad_media || !c_ad_user) {
     .then(() => console.log("✅ complete 전송 완료!"))
     .catch(err => console.error("❌ complete 전송 실패", err));
 
-    console.log("✅ 전체 파라미터 문자열:", params.toString());
-
-
-    sessionStorage.setItem(c_key, "1");
+    sessionStorage.setItem(key, "1");
   }
 }
